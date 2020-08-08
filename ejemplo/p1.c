@@ -1,3 +1,6 @@
+/**
+ * comnpilar con: gcc p1.c -lproj
+ */
 #include <stdio.h>
 #include <proj.h>
 

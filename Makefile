@@ -7,7 +7,7 @@
 
 CC= g++ -c
 
-CLINKER= g++ -lm -o
+CLINKER= g++ -lm -lproj -o
 
 CFLAGS= -O2  -Wall -std=c++11
 
