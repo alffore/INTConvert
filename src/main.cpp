@@ -17,7 +17,7 @@ using namespace std;
 int main(int argc, char *argv[]){
 
 
-	CovertidorC cc(NULL);
+	ConvertidorC cc(NULL);
 
 	Punto *p = new Punto();
 	//2489072.503500,1115771.584500
