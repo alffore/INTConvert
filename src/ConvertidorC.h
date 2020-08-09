@@ -1,7 +1,13 @@
 #ifndef CONVERTIDORC_H
 #define CONVERTIDORC_H
 
+#include <iostream>
+#include <cstdlib>
 #include <vector>
+#include <string>
+#include <sstream>
+#include <vector>
+
 #include <proj.h>
 
 #include "Punto.h"

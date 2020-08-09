@@ -1,5 +1,6 @@
 #include "ConvertidorC.h"
 
+
 ConvertidorC::ConvertidorC(vector<Poligonal> &vPol):vPol(vPol){
     C = proj_context_create();
     P = proj_create_crs_to_crs(C,"EPSG:6372","EPSG:4326",NULL);
@@ -26,12 +27,14 @@ int ConvertidorC::convierteCoords(){
     return cc;
 }
 
-
+/**
+*
+*/
 int ConvertidorC::conviertePuntos(Punto* pori, Punto &pdest){
 	PJ_COORD a, b;
 
-	a= proj_coords(pori->x,pori->y,0,0);
-	b= proj_trans(P,PJ_FWD,a);
+	a = proj_coord(pori->x,pori->y,0,0);
+	b = proj_trans(P,PJ_FWD,a);
 
 	pdest.x=b.lp.lam;
 	pdest.y=b.lp.phi;
