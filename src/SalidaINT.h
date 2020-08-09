@@ -2,6 +2,7 @@
 #define SALIDAINT_H
 
 #include <iostream>
+#include <iomanip> 
 #include <fstream>
 #include <cstdlib>
 #include <vector>

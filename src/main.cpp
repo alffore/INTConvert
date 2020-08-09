@@ -1,3 +1,12 @@
+/**
+* Código que utiliza la libproj 7.1
+* convierte un sistema de coordenadas a otro "EPSG:6372" a "EPSG:4326"
+*
+* AAFR <alffore@gmail.com>
+* 9 de agosto de 2020
+*/
+
+
 #include <iostream>
 #include <cstdlib>
 #include <vector>
@@ -23,6 +32,7 @@ int main(int argc, char *argv[]){
     	cout << "Donde: "<<endl;
     	cout << "polígonos-INT-Origen: archivo en formato INT para convertir"<<endl;
     	cout << "polígonos-INT-Destino: archivo en formato INT convertido"<<endl;
+    	exit(1);
 	}
 
 	//leemos el archivo INT
@@ -33,6 +43,7 @@ int main(int argc, char *argv[]){
   	cout << "VPol size: "<< vPol.size() << endl;
 
   	ConvertidorC conv(vPol);
+  	conv.conviertePoligonos();
 
 
   	cout << "Salida INT: " << argv[2] << endl;

@@ -2,6 +2,7 @@
 #define CONVERTIDORC_H
 
 #include <iostream>
+#include <iomanip> 
 #include <cstdlib>
 #include <vector>
 #include <string>
@@ -26,6 +27,7 @@ protected:
 
         PJ_CONTEXT *C;
         PJ *P;
+        PJ *P_for_GIS;
 
         vector<Poligonal> &vPol;
 
