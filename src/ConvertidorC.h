@@ -4,6 +4,7 @@
 #include <vector>
 #include <proj.h>
 
+#include "Punto.h"
 #include "Poligonal.h"
 
 using namespace std;
@@ -15,13 +16,17 @@ class ConvertidorC {
         PJ_CONTEXT *C;
         PJ *P;
 
+        vector<Poligonal> &vPol;
+
     public:
 
-        ConvertidorC();
+        ConvertidorC(vector<Poligonal> &vPol);
 
         ~ConvertidorC();
 
-    int convierteCoords(vector<Poligonal> vp);
+    int convierteCoords();
+
+    int conviertePuntos(Punto* pori,Punto &pdest);
 };
 
 

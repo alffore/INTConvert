@@ -8,6 +8,7 @@ using namespace std;
  *
  */
 LectorINT::LectorINT(string sarchivo, int campo1, int campo2, int campov) {
+    
     this->sarchivo = sarchivo;
 
 
