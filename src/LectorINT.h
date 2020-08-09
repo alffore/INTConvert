@@ -14,25 +14,23 @@
 #define DELIMITER       "|"
 
 
-
 using namespace std;
 
+
 class LectorINT {
+
 public:
 
-  vector<Poligonal> vPol;
+  
 
-  LectorINT(string sarchivo, int campo1, int campo2, int campov);
+  LectorINT(vector<Poligonal>& vPol,string sarchivo);
 
   static void split(vector<string>& theStringVector, const string& theString, const string& theDelimiter);
 
 private:
 
+  vector<Poligonal>& vPol;
   string sarchivo;
-
-  int campo1;
-  int campo2;
-  int campov;
 
   void inicializador(void);
 
@@ -40,8 +38,8 @@ private:
 
   void parserSPunto(vector<Punto>& vP, const string & scad);
 
-
   static bool ordenadorP(const Poligonal& p1, const Poligonal& p2);
+
 };
 
 #endif

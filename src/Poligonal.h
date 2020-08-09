@@ -9,11 +9,10 @@
 #include "Punto.h"
 
 
-
 using namespace std;
 
-class Poligonal {
 
+class Poligonal {
 
 public:
 

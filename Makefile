@@ -7,15 +7,17 @@
 
 CC= g++ -c
 
-CLINKER= g++ -lm -lproj -o
+CLINKER= g++ -o
 
-CFLAGS= -O2  -Wall -std=c++11
+CFLAGS= -O2  -Wall -std=c++14
 
-LIBS=
+LIBS= -lm -lproj
 
 OBJ= main.o \
 	LectorINT.o \
-	Poligonal.o
+	Poligonal.o \
+	ConvertidorC.o \
+	SalidaINT.o
 
 
 DIR_SRC= ./src/
@@ -24,7 +26,7 @@ DIR_OBJ= ./obj/
 
 
 all: clean $(OBJ)
-	$(CLINKER) $(DIR_BIN)int2svg.exe $(OBJ) $(LIBS) $(CFLAGS)
+	$(CLINKER) $(DIR_BIN)intconvert.exe $(OBJ) $(LIBS) $(CFLAGS)
 	@rm -rf *.o
 
 

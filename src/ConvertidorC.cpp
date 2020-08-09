@@ -13,15 +13,21 @@ ConvertidorC::~ConvertidorC(){
 }
 
 
-int ConvertidorC::convierteCoords(){
+int ConvertidorC::conviertePoligonos(){
     int cc=0;
 
     for (auto it = vPol.begin(); it != vPol.end(); ++it){
+    	vector<Punto> vpt;
 
-    	for(auto itp = it->vp.begin();itp != it->vp.end();++itp){
+    	for(auto itp = it->vp.begin(); itp != it->vp.end(); ++itp){
+    		Punto ptrans;
 
-    		cout << itp->x << " "<< itp->y <<endl;
+    		conviertePuntos(*itp,ptrans);
+
+    		vpt.push_back(ptrans);
     	}
+
+    	it->vp=vpt;
     }
 
     return cc;
@@ -30,10 +36,10 @@ int ConvertidorC::convierteCoords(){
 /**
 *
 */
-int ConvertidorC::conviertePuntos(Punto* pori, Punto &pdest){
+int ConvertidorC::conviertePuntos(Punto &pori, Punto &pdest){
 	PJ_COORD a, b;
 
-	a = proj_coord(pori->x,pori->y,0,0);
+	a = proj_coord(pori.x,pori.y,0,0);
 	b = proj_trans(P,PJ_FWD,a);
 
 	pdest.x=b.lp.lam;

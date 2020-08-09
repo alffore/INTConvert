@@ -8,6 +8,7 @@
 #include "Poligonal.h"
 #include "LectorINT.h"
 #include "ConvertidorC.h"
+#include "SalidaINT.h"
 
 
 using namespace std;
@@ -17,22 +18,26 @@ vector<Poligonal> vPol;
 
 int main(int argc, char *argv[]){
 
+	if (argc < 3) {
+		cout << "Falta lista con archivo a procesar: polígonos-INT-Origen  poligonos-INT-Destino" << endl;
+    	cout << "Donde: "<<endl;
+    	cout << "polígonos-INT-Origen: archivo en formato INT para convertir"<<endl;
+    	cout << "polígonos-INT-Destino: archivo en formato INT convertido"<<endl;
+	}
 
-	ConvertidorC cc(vPol);
+	//leemos el archivo INT
+  	cout << "Archivo INT: " << argv[1] << endl;
 
-	Punto *p = new Punto();
-	//2489072.503500,1115771.584500
-	p->x=2489072.5035;
-	p->y=1115771.5845;
+  	LectorINT lint(vPol,string(argv[1]));
 
-	Punto pdest;
+  	cout << "VPol size: "<< vPol.size() << endl;
 
-	cc.conviertePuntos(p,pdest);
-
-	cout<< pdest.x <<" "<< pdest.y <<endl;
+  	ConvertidorC conv(vPol);
 
 
-	delete p;
+  	cout << "Salida INT: " << argv[2] << endl;
+
+  	SalidaINT sint(string(argv[2]),vPol);
 
     return 0;
 }
